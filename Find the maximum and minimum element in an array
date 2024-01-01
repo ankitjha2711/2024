@@ -1,0 +1,27 @@
+Q-https://practice.geeksforgeeks.org/problems/max-min/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
+class Solution
+{ 
+    public static int findSum(int A[],int N) 
+    {
+        int max=Integer.MAX_VALUE;
+        int min=Integer.MIN_VALUE;
+        for(int i=0;i<N;i++){
+            if(A[i]<max){
+                max=A[i];
+            }
+        }
+        for(int i=0;i<N;i++){
+            if(A[i]>min){
+                min=A[i];
+            }
+        }
+       int sum=min+max;
+        return sum;
+    }
+}
+
+The time complexity of this code is O(N), where N is the size of the input array A[].
+
+The code has two loops iterating over the array, each running N times. Within each loop, it performs constant time operations (assignment and comparison) regardless of the array size. Therefore, the overall time complexity remains linearly dependent on the input size, making it O(N).
+
+As for space complexity, the code uses a constant amount of extra space (variables like max, min, and sum) that do not increase with the input size. Therefore, the space complexity remains O(1), indicating constant space usage regardless of the input size N.
