@@ -1,0 +1,67 @@
+Reverse an array:
+Method 1:
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        
+        Scanner sc=new Scanner(System.in);  
+        int n=sc.nextInt();
+        int[] arr= new int[n];
+        int[] a= new int[n];
+        for(int i=n-1;i>=0;i--){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            a[i]=arr[i];
+        }
+         for(int i=0;i<n;i++){
+            System.out.print(a[i]);  
+        }
+    }
+}
+The time complexity of your code is O(n), where 'n' is the size of the input array. Let's break it down:
+
+Reading the input elements into the arr array takes O(n) time because it iterates through 'n' elements.
+Copying elements from arr to a also takes O(n) time as it goes through 'n' elements once more.
+Printing the elements of the a array takes O(n) time as it prints 'n' elements sequentially.
+Hence, the overall time complexity is O(n) due to the dominant linear iterations through the 'n' elements in each step of the algorithm.
+
+Regarding space complexity:
+
+The space complexity is O(n) as well. You have two arrays, arr and a, each of size 'n'.
+Additionally, the space required for the Scanner object and any other variables used independently contributes insignificantly to the overall space complexity, which remains linearly dependent on the input size 'n'.
+
+Method 2:
+import java.util.*;
+
+class Main{
+    public static void main(String[] args){
+        
+        Scanner sc=new Scanner(System.in);  
+        int n=sc.nextInt();
+        int[] arr= new int[n];
+        int temp;
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n/2;i++){
+            temp=arr[i];
+            arr[i]=arr[n-1-i];
+            arr[n-1-i]=temp;
+        }
+         for(int i=0;i<n;i++){
+            System.out.print(arr[i]);  
+        }
+    }
+}
+The time complexity of this algorithm is O(n), where 'n' is the number of elements in the array:
+
+Reading the 'n' elements into the array takes O(n) time.
+Reversing the array in place requires iterating through the array till the midpoint (n/2) and swapping elements. This also takes O(n/2) time, which simplifies to O(n) as constants are dropped in big O notation.
+Printing the elements of the array takes O(n) time.
+The space complexity of this algorithm is O(1) because it uses a constant amount of extra space (the variable 'temp' for swapping) regardless of the input size 'n'. The array manipulation is done in place without using any additional data structures that grow with the input size.
+
+
+
+
+
