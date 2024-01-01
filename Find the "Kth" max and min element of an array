@@ -1,0 +1,12 @@
+class Solution{
+    public static int kthSmallest(int[] arr, int l, int r, int k) 
+    { 
+    
+        Arrays.sort(arr);
+        return arr[l+k-1];  
+        
+    } 
+}
+
+The time complexity of this code is dominated by the sorting algorithm used within Arrays.sort(). For typical scenarios, this method uses a dual-pivot quicksort for primitive types like integers (as of the Java version up to my last update in 2022). The time complexity of quicksort is O(N log N) in the average case and O(N^2) in the worst-case scenario, but the average case is commonly encountered for random or diverse data. Hence, the time complexity for sorting dominates, making it O(N log N).
+Regarding space complexity, the sorting function Arrays.sort() typically sorts the array in place, meaning it doesn't use additional space proportional to the array size. Hence, the space complexity is O(1) or constant space.
