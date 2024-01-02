@@ -1,0 +1,20 @@
+
+class Solution{
+    public static int doUnion(int a[], int n, int b[], int m) 
+    {
+        HashSet<Integer> unionSet = new HashSet<>();
+        
+        // Add all elements of array a to the set
+        for (int i = 0; i < n; i++) {
+            unionSet.add(a[i]);
+        }
+        
+        // Add all elements of array b to the set
+        for (int i = 0; i < m; i++) {
+            unionSet.add(b[i]);
+        }
+        
+        return unionSet.size(); // Return the size of the union set
+    }
+}
+https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1
