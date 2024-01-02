@@ -1,0 +1,27 @@
+class Compute {
+    
+     public void rotate(int arr[], int n)
+    {
+
+
+        //  storing the last element of array
+
+
+        int temp=arr[n-1];
+
+
+        // shifting the array elements in right direction by 1
+
+
+        for(int i=n-1;i>0;i--)
+        {
+            arr[i]=arr[i-1];
+        }
+
+
+        // storing the last element of array at the starting index of array
+
+
+        arr[0]=temp;
+    }
+}
